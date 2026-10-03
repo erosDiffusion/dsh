@@ -1,0 +1,52 @@
+{
+  "name": "dsh-video-scene-extractor",
+  "version": "0.1.0",
+  "description": "DeepSeek Harness bundle: the video-scene-extractor agent preset, skill and deterministic ffmpeg/whisper/PIL pipeline (packet-pts mapping, MAD isolated-spike cut detection, before/after visual verification) plus a /video-extractor slash command and the DSH_VIDEO_SKILL_DIR shell variable.",
+  "type": "module",
+  "license": "MIT",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./presets/video-scene-extractor.patch.yml": "./presets/video-scene-extractor.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src",
+    "skills",
+    "presets",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "plugin",
+    "preset",
+    "video",
+    "scene-detection",
+    "cut-detection",
+    "ffmpeg",
+    "whisper",
+    "minimax",
+    "h3",
+    "ref2va"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erosDiffusion/dsh.git"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": [
+        "./cordis.patch.yml",
+        "./presets/video-scene-extractor.patch.yml"
+      ]
+    }
+  },
+  "homepage": "https://github.com/erosDiffusion/dsh#readme"
+}

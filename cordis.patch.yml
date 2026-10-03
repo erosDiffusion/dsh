@@ -1,0 +1,12 @@
+# Host row: loads this bundle's own entry (src/index.js) on the profile root.
+# The entry registers:
+#   - the /video-extractor slash command (one-shot pipeline trigger; validates the
+#     video path and submits a runbook-driven user turn), and
+#   - the DSH_VIDEO_SKILL_DIR shell variable so agents can address this package's
+#     skill directory (SKILL.md + scripts/) without machine-specific paths.
+# The agent preset itself is declared by presets/video-scene-extractor.patch.yml
+# (companion patch in this bundle's list); this row serves every session on the
+# profile, whatever preset it runs.
+- insert:
+    - id: video-scene-extractor
+      name: dsh-video-scene-extractor
